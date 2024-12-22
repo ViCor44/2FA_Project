@@ -40,10 +40,10 @@ Este projeto é um **sistema de login** com **opção de autenticação de dois 
     - No arquivo `Database.php`, insira suas credenciais de banco de dados.
 
     ```php
-    define('DB_HOST', 'localhost');
-    define('DB_USERNAME', 'seu_usuario');
-    define('DB_PASSWORD', 'sua_senha');
-    define('DB_NAME', 'worklog_cmms');
+    private $host = "localhost";
+    private $db_name = "2fa_project";
+    private $username = "root";
+    private $password = "";     
     ```
 
 5. **Configuração do 2FA:**

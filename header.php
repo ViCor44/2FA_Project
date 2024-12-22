@@ -42,14 +42,14 @@ $username = htmlspecialchars($user_data['username']);
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-    <header class="bg-blue-600 text-white p-4 shadow-md flex items-center justify-between">
+    <header class="bg-gray-600 text-white p-4 shadow-md flex items-center justify-between">
         <div class="flex items-center space-x-4">
             <h1 class="text-xl font-bold">Dashboard</h1>
             <span class="text-sm font-medium"><?= $greeting ?>, <?= $username ?>!</span>
         </div>
         <div class="flex items-center space-x-4">
             <a href="edit_profile.php" class="text-sm underline hover:text-gray-200">Edit Profile</a>
-            <a href="logout.php" class="text-sm underline hover:text-gray-200">Logout</a>
+        <a href="logout.php" class="text-sm underline hover:text-gray-200">Logout</a>
         </div>
     </header>
 </body>

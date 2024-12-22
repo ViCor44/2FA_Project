@@ -4,18 +4,18 @@ Este projeto é um **sistema de login** com **opção de autenticação de dois 
 
 ## Funcionalidades
 
-- **Autenticação de Usuário:** Sistema de login simples com verificação de nome de usuário e senha.
+- **Autenticação de Utilizador:** Sistema de login simples com verificação de nome de utilizador e senha.
 - **Autenticação de Dois Fatores (2FA):** 
-  - Quando habilitado, o usuário será redirecionado para uma página onde deverá realizar a verificação 2FA após o login.
+  - Quando habilitado, o utilizador será redirecionado para uma página onde deverá realizar a verificação 2FA após o login.
   - Suporte para a configuração e verificação do 2FA com a utilização de uma chave temporária (gerada com o Google Authenticator ou outros aplicativos similares).  
-- **Dashboard:** Após o login bem-sucedido, o usuário é redirecionado para um painel de controle, que pode ser estendido para incluir informações relevantes para o sistema de gestão de manutenção.
+- **Dashboard:** Após o login bem-sucedido, o uutilizador é redirecionado para um painel de controle.
 - **Segurança:** Senha criptografada no banco de dados, proteção contra ataques comuns, e a autenticação de dois fatores adiciona uma camada extra de segurança.
 
 ## Requisitos
 
 - PHP 7.4 ou superior
 - MySQL
-- Composer (para gerenciar dependências)
+- Composer (para gerir dependências)
 - Extensão cURL do PHP
 - Biblioteca de 2FA (Google Authenticator, Authy ou similar)
 
@@ -32,28 +32,28 @@ Este projeto é um **sistema de login** com **opção de autenticação de dois 
     composer install
     ```
 
-3. **Crie o banco de dados** no MySQL com as tabelas necessárias para o funcionamento do sistema:
-    - Crie um banco de dados chamado `2fa_projet`.
-    - Importe o esquema de banco de dados que está disponível no diretório `database/` (se aplicável).
+3. **Crie a base de dados** no MySQL com as tabelas necessárias para o funcionamento do sistema:
+    - Crie uma base de dados chamada `2fa_projet`.
+    - Importe o esquema de base de dados que está disponível no diretório `database/` (se aplicável).
 
-4. **Configuração do Banco de Dados:**
+4. **Configuração da Base de Dados:**
     - No arquivo `Database.php`, insira suas credenciais de banco de dados.
 
     ```php
-    define('DB_HOST', 'localhost');
-    define('DB_USERNAME', 'seu_usuario');
-    define('DB_PASSWORD', 'sua_senha');
-    define('DB_NAME', 'worklog_cmms');
+    private $host = "localhost";
+    private $db_name = "2fa_project";
+    private $username = "root";
+    private $password = "";     
     ```
 
 5. **Configuração do 2FA:**
-    - Para a configuração da autenticação de dois fatores, use um aplicativo como **Google Authenticator** ou **Authy**.
-    - Ao realizar o login, se o 2FA estiver habilitado, o sistema redirecionará o usuário para a página de verificação.
+    - Para a configuração da autenticação de dois fatores, use uma aplicaçãoo como **Google Authenticator** ou **Authy**.
+    - Ao realizar o login, se o 2FA estiver habilitado, o sistema redirecionará o utilizador para a página de verificação.
 
 6. **Acesse o Sistema:**
-    - Depois de configurar o banco de dados e as dependências, acesse o sistema via navegador:
+    - Depois de configurar a base de dados e as dependências, acesse o sistema via navegador:
     ```bash
-    http://localhost/2fa_projet
+    http://localhost/2fa_projet/login.php
     ```
 
 ## Como Contribuir
@@ -64,9 +64,9 @@ Este projeto é um **sistema de login** com **opção de autenticação de dois 
 4. **Push para a branch** (`git push origin feature/nova-funcionalidade`).
 5. **Abra um Pull Request**.
 
-## Doações
+## Donativos
 
-Se você gostou do projeto e deseja apoiar o desenvolvimento contínuo, você pode fazer uma doação através do botão abaixo.
+Se você gostou do projeto e deseja apoiar o desenvolvimento contínuo, você pode fazer um donativo através do botão abaixo.
 
 [![Doe com PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?business=victor.a.correia@gmail.com)
 
@@ -83,4 +83,4 @@ Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICE
 
 ---
 
-Se você tiver alguma dúvida ou sugestão, sinta-se à vontade para abrir uma **issue** ou contribuir com um **pull request**!
+Se tiver alguma dúvida ou sugestão, sinta-se à vontade para abrir uma **issue** ou contribuir com um **pull request**!

@@ -23,21 +23,21 @@ Este projeto é um **sistema de login** com **opção de autenticação de dois 
 
 1. **Clone o repositório**:
     ```bash
-    git clone https://github.com/seu-usuario/worklog-cmms.git
+    git clone https://github.com/ViCor44/2FA_Project.git
     ```
 
 2. **Instale as dependências com o Composer**:
     ```bash
-    cd worklog-cmms
+    cd 2FA_Project
     composer install
     ```
 
 3. **Crie o banco de dados** no MySQL com as tabelas necessárias para o funcionamento do sistema:
-    - Crie um banco de dados chamado `worklog_cmms`.
+    - Crie um banco de dados chamado `2fa_projet`.
     - Importe o esquema de banco de dados que está disponível no diretório `database/` (se aplicável).
 
 4. **Configuração do Banco de Dados:**
-    - No arquivo `config.php`, insira suas credenciais de banco de dados.
+    - No arquivo `Database.php`, insira suas credenciais de banco de dados.
 
     ```php
     define('DB_HOST', 'localhost');
@@ -53,7 +53,7 @@ Este projeto é um **sistema de login** com **opção de autenticação de dois 
 6. **Acesse o Sistema:**
     - Depois de configurar o banco de dados e as dependências, acesse o sistema via navegador:
     ```bash
-    http://localhost/worklog-cmms
+    http://localhost/2fa_projet
     ```
 
 ## Como Contribuir

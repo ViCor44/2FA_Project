@@ -43,7 +43,7 @@ class User {
         return $stmt->execute();
     }
 
-    // Método para buscar o usuário pelo ID
+    // Método para buscar o utilizador pelo ID
     public function getById($id) {
         $query = "SELECT * FROM " . $this->table . " WHERE id = :id";
         $stmt = $this->conn->prepare($query);

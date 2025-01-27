@@ -22,11 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif ($new_password !== $confirm_password) {
         $error_message = "As senhas não coincidem.";
     } else {
-        // Buscar o usuário pelo e-mail e verificar a pergunta e resposta de segurança
+        // Buscar o utilizador pelo e-mail e verificar a pergunta e resposta de segurança
         $user_data = $user->getByEmail($email);
 
         if ($user_data && $user_data['security_question'] === $security_question && $user_data['security_answer'] === $security_answer) {
-            // Atualizar a senha do usuário
+            // Atualizar a senha do utilizador
             $hashed_password = password_hash($new_password, PASSWORD_BCRYPT);
             if ($user->updatePassword($email, $hashed_password)) {
                 $success_message = "Senha redefinida com sucesso. Faça login novamente.";

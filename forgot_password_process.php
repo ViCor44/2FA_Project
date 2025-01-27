@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $security_answer = $_POST['security_answer'];
 
-    // Buscar o usuário no banco
+    // Buscar o utilizador no banco
     $query = "SELECT * FROM users WHERE username = :username";
     $stmt = $conn->prepare($query);
     $stmt->bindParam(":username", $username);
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: reset_password.php?user_id=" . $user_data['id']);
         exit();
     } else {
-        echo "<div class='alert alert-danger'>Usuário ou resposta de segurança incorretos.</div>";
+        echo "<div class='alert alert-danger'>utilizador ou resposta de segurança incorretos.</div>";
     }
 }
 ?>

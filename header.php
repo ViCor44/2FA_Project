@@ -2,7 +2,7 @@
 include 'classes/User.php';
 include 'classes/Database.php';
 
-// Verificar se o usuário está logado
+// Verificar se o utilizador está logado
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
@@ -11,12 +11,12 @@ if (!isset($_SESSION['user_id'])) {
 $db = (new Database())->getConnection();
 $user = new User($db);
 
-// Buscar os detalhes do usuário logado
+// Buscar os detalhes do utilizador logado
 $user_id = $_SESSION['user_id'];
 $user_data = $user->getById($user_id);
 
 if (!$user_data) {
-    // Se o usuário não for encontrado, forçar logout
+    // Se o utilizador não for encontrado, forçar logout
     header("Location: logout.php");
     exit();
 }

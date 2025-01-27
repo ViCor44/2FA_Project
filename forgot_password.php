@@ -3,7 +3,7 @@
     <h2 class="text-center">Recuperação de Senha</h2>
     <form method="POST" action="forgot_password_process.php">
         <div class="mb-3">
-            <label for="username" class="form-label">Usuário</label>
+            <label for="username" class="form-label">utilizador</label>
             <input type="text" class="form-control" id="username" name="username" required>
         </div>
         <div class="mb-3">

@@ -79,7 +79,7 @@ Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICE
 - **Tailwind CSS** - Framework de design que foi utilizado para a estilização.
 - **Google Authenticator** - Para implementação da autenticação de dois fatores.
 - **PHP** - Para a lógica de backend do sistema.
-- **MySQL** - Para o armazenamento de dados do usuário e configurações.
+- **MySQL** - Para o armazenamento de dados do utilizador e configurações.
 
 ---
 

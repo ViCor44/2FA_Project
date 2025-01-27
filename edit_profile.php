@@ -6,7 +6,7 @@ require_once 'vendor/autoload.php';
 
 use PragmaRX\Google2FA\Google2FA;
 
-// Verificar se o usuário está logado
+// Verificar se o utilizador está logado
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
@@ -16,7 +16,7 @@ $db = (new Database())->getConnection();
 $user = new User($db);
 $user_id = $_SESSION['user_id'];
 
-// Buscar os detalhes do usuário logado
+// Buscar os detalhes do utilizador logado
 $user_data = $user->getById($user_id);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -29,13 +29,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Validar entrada
     if (empty($username) || empty($email)) {
-        $error_message = "O nome de usuário e o e-mail são obrigatórios.";
+        $error_message = "O nome de utilizador e o e-mail são obrigatórios.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error_message = "O e-mail informado não é válido.";
     } elseif (!empty($password) && $password !== $confirm_password) {
         $error_message = "As senhas não coincidem.";
     } else {
-        // Atualizar informações do usuário
+        // Atualizar informações do utilizador
         $hashed_password = !empty($password) ? password_hash($password, PASSWORD_BCRYPT) : null;
 
         if ($user->updateProfile($user_id, $username, $email, $hashed_password, $enable_2fa)) {
@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <form method="POST">
             <div class="mb-4">
-                <label for="username" class="block text-sm font-medium text-gray-300">Nome de Usuário</label>
+                <label for="username" class="block text-sm font-medium text-gray-300">Nome de utilizador</label>
                 <input type="text" id="username" name="username" value="<?= htmlspecialchars($user_data['username']) ?>"
                        class="mt-1 block w-full px-4 py-2 border border-gray-700 bg-gray-700 text-white rounded-md focus:ring-blue-500 focus:border-blue-500"
                        required>
